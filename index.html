@@ -1,0 +1,534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Amarjeet Kumar Verma | QA Automation Engineer &amp; AI Quality</title>
+<meta name="description" content="Portfolio of Amarjeet Kumar Verma, QA Automation Engineer: Python test automation with Behave, Playwright, Selenium and Appium, API and end-to-end testing, open-source load testing, and AI quality evaluation.">
+<link rel="canonical" href="https://amarjeetakv.github.io/">
+<meta name="author" content="Amarjeet Kumar Verma">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://amarjeetakv.github.io/">
+<meta property="og:title" content="Amarjeet Kumar Verma | QA Automation Engineer &amp; AI Quality">
+<meta property="og:description" content="8+ years in QA. Python test automation for APIs, web and mobile apps, open-source load testing, and AI quality evaluation.">
+<meta property="og:image" content="https://amarjeetakv.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Amarjeet Kumar Verma, QA Automation Engineer">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amarjeet Kumar Verma | QA Automation Engineer &amp; AI Quality">
+<meta name="twitter:description" content="8+ years in QA. Python test automation, API and end-to-end testing, open-source load testing, AI quality evaluation.">
+<meta name="twitter:image" content="https://amarjeetakv.github.io/assets/og-image.png">
+<meta name="theme-color" content="#0b1220">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<script>
+  // Apply a saved theme before first paint to avoid a flash.
+  try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+</script>
+<style>
+/* Layout: one 1100px column. Sticky nav, compact hero, then sections of
+   consistent cards. One accent (teal); semantic colours only for project-type tags. */
+:root{
+  --bg:#f6f7f9; --surface:#ffffff; --ink:#0f172a; --muted:#475569; --line:#dde3ea; --chip:#eef2f6;
+  --accent:#0f766e; --accent-ink:#ffffff; --accent-soft:#e6f4f2;
+  --t-pro:#1d4ed8; --t-oss:#166534; --t-ind:#92400e;
+  --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  --mono:ui-monospace,"SFMono-Regular","Cascadia Mono",Menlo,Consolas,monospace;
+  --radius:12px;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0b1220; --surface:#111a2b; --ink:#e6edf7; --muted:#9fb0c6; --line:#22304a; --chip:#18243a;
+    --accent:#2dd4bf; --accent-ink:#04201d; --accent-soft:#0f2a2c;
+    --t-pro:#93b4ff; --t-oss:#6ee7a0; --t-ind:#fbbf6a;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0b1220; --surface:#111a2b; --ink:#e6edf7; --muted:#9fb0c6; --line:#22304a; --chip:#18243a;
+  --accent:#2dd4bf; --accent-ink:#04201d; --accent-soft:#0f2a2c;
+  --t-pro:#93b4ff; --t-oss:#6ee7a0; --t-ind:#fbbf6a;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+html{scroll-padding-top:76px;-webkit-text-size-adjust:100%}
+@media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
+a{color:var(--accent);text-underline-offset:3px}
+:focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
+h1,h2,h3,h4{line-height:1.2;margin:0;text-wrap:balance}
+p{margin:0}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:-999px;top:8px;background:var(--surface);color:var(--ink);padding:8px 12px;border-radius:8px;z-index:50}
+.skip:focus{left:8px}
+
+/* nav */
+.site-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+.brand{font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
+.brand img{width:28px;height:28px}
+.nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
+.nav-links a{display:block;padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
+.nav-links a:hover{color:var(--ink);background:var(--chip)}
+.nav-links a[aria-current="true"]{color:var(--ink);background:var(--chip)}
+.nav-tools{display:flex;gap:4px}
+.icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1px solid transparent;border-radius:10px;background:none;color:var(--ink);cursor:pointer}
+.icon-btn:hover{background:var(--chip)}
+.icon-btn svg{width:20px;height:20px}
+#menu-btn{display:none}
+
+/* buttons */
+.btns{display:flex;flex-wrap:wrap;gap:10px}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;font:600 15.5px var(--sans);text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--accent)}
+.btn svg{width:18px;height:18px;flex:none}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+.btn.primary:hover{filter:brightness(1.08)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:56px 0 48px}
+.avatar{width:168px;height:168px;border-radius:50%;object-fit:cover;border:4px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+.hero h1{font-size:clamp(34px,5vw,50px);letter-spacing:-.02em}
+.headline{font-family:var(--mono);font-size:clamp(14px,1.8vw,16.5px);color:var(--accent);margin:10px 0 16px;font-weight:500}
+.lede{color:var(--muted);max-width:64ch;font-size:18px}
+.status{display:inline-flex;align-items:center;gap:8px;font-size:14.5px;color:var(--muted);margin:16px 0 22px}
+.status i{width:9px;height:9px;border-radius:50%;background:var(--t-oss);display:inline-block}
+
+/* sections */
+section{padding:56px 0;border-top:1px solid var(--line)}
+.sec-head{margin-bottom:28px;max-width:72ch}
+.sec-head h2{font-size:clamp(26px,3.4vw,32px);letter-spacing:-.01em}
+.sec-head p{color:var(--muted);margin-top:8px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(2,minmax(0,1fr))}
+.g3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.g4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.chips{display:flex;flex-wrap:wrap;gap:6px;list-style:none;margin:0;padding:0}
+.chips li{font-size:13.5px;padding:3px 10px;border-radius:999px;background:var(--chip);color:var(--ink)}
+.muted{color:var(--muted)}
+.small{font-size:14.5px}
+.mono{font-family:var(--mono)}
+
+/* about */
+.about{display:grid;grid-template-columns:1.25fr 1fr;gap:24px;align-items:start}
+.about .prose p+p{margin-top:12px}
+.about .prose p{color:var(--muted)}
+.about .prose strong{color:var(--ink);font-weight:600}
+.facts{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.facts li{display:grid;grid-template-columns:120px 1fr;gap:12px;font-size:15px}
+.facts b{color:var(--muted);font-weight:500}
+
+.hl h3{font-size:16px;margin-bottom:6px}
+.hl p{font-size:14.5px;color:var(--muted)}
+.src{display:inline-block;margin-top:10px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+
+/* type tags */
+.tag{display:inline-flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;letter-spacing:.02em;padding:3px 10px;border-radius:999px;border:1px solid currentColor;width:max-content}
+.tag::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+.tag.pro{color:var(--t-pro)} .tag.oss{color:var(--t-oss)} .tag.ind{color:var(--t-ind)}
+
+/* projects */
+.proj{display:flex;flex-direction:column;gap:12px}
+.proj-top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:center}
+.proj h3{font-size:19px}
+.when{font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums}
+.proj dl{margin:0;display:grid;gap:8px}
+.proj dt{font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.proj dd{margin:0;font-size:15px}
+.proj .foot{margin-top:auto;padding-top:6px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.note{font-size:13.5px;color:var(--muted)}
+
+/* skills */
+.skill h3{font-size:16px;margin-bottom:10px}
+.skill .sub{font-size:12.5px;font-weight:600;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:12px 0 6px}
+
+/* experience */
+.job+.job{margin-top:16px}
+.job-head{display:flex;flex-wrap:wrap;justify-content:space-between;gap:6px 16px;align-items:baseline}
+.job h3{font-size:20px}
+.org{color:var(--accent);font-weight:600}
+ul.list{margin:12px 0 0;padding-left:20px;display:grid;gap:6px}
+ul.list li::marker{color:var(--accent)}
+.work{margin-top:16px;border-top:1px dashed var(--line);padding-top:14px}
+.work h4{font-size:14px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin-bottom:8px}
+.work ul{margin:0;padding-left:20px;display:grid;gap:4px;font-size:15px}
+
+/* AI quality */
+.aiq{display:grid;grid-template-columns:1fr 1.35fr;gap:16px;align-items:start}
+.cats{list-style:none;margin:0;padding:0;display:grid;gap:0}
+.cats li{display:grid;grid-template-columns:28px 1fr;gap:10px;padding:12px 0;border-top:1px solid var(--line)}
+.cats li:first-child{border-top:0;padding-top:0}
+.cats .n{font-family:var(--mono);font-size:13px;color:var(--accent);padding-top:2px}
+.cats b{display:block;font-size:15.5px}
+.cats span{font-size:14.5px;color:var(--muted)}
+.callout{margin-top:16px;padding:14px 16px;border-left:3px solid var(--t-ind);background:var(--chip);border-radius:0 8px 8px 0;font-size:14.5px;color:var(--muted)}
+
+/* OSS */
+.pr-status{font-family:var(--mono);font-size:12.5px;padding:2px 8px;border-radius:6px;background:var(--chip)}
+.pr-status.merged{color:var(--t-oss)} .pr-status.open{color:var(--t-ind)}
+
+/* contact */
+.contact-list{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.contact-list li{display:grid;grid-template-columns:110px 1fr;gap:12px;align-items:baseline}
+.contact-list b{color:var(--muted);font-weight:500;font-size:15px}
+.copy-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+.copy-msg{font-size:14px;color:var(--t-oss);min-height:1.2em}
+
+footer{border-top:1px solid var(--line);padding:24px 0 40px;font-size:14px;color:var(--muted)}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
+
+/* responsive */
+@media (max-width:1000px){
+  .g4{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .g3{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .nav-links a{padding:8px 9px}
+}
+@media (max-width:880px){
+  #menu-btn{display:grid}
+  .nav-links{display:none;position:absolute;top:64px;left:0;right:0;flex-direction:column;gap:2px;padding:10px 16px 16px;background:var(--bg);border-bottom:1px solid var(--line)}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:12px}
+  .about,.aiq,.g2{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .wrap{padding:0 16px}
+  .hero{grid-template-columns:1fr;gap:20px;padding:36px 0 36px}
+  .avatar{width:112px;height:112px}
+  .g4,.g3{grid-template-columns:1fr}
+  .btns .btn{flex:1 1 calc(50% - 10px);justify-content:center}
+  .facts li,.contact-list li{grid-template-columns:1fr;gap:2px}
+  section{padding:44px 0}
+}
+@media print{.site-nav,.nav-tools,.btns{display:none}section{border:0}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-nav">
+  <nav class="wrap nav-in" aria-label="Main">
+    <a class="brand" href="#home"><img src="assets/favicon.svg" alt="" width="28" height="28">Amarjeet Kumar Verma</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#open-source">Open Source</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-tools">
+      <button class="icon-btn" id="theme-btn" type="button" aria-label="Switch colour theme">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8Z"/></svg>
+      </button>
+      <button class="icon-btn" id="menu-btn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="nav-links">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+    </div>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+
+<div class="hero" id="home">
+  <img class="avatar" src="assets/profile.jpg" alt="Photo of Amarjeet Kumar Verma" width="168" height="168">
+  <div>
+    <h1>Amarjeet Kumar Verma</h1>
+    <p class="headline">QA Automation Engineer | Python | API Testing | AI Quality</p>
+    <p class="lede">I build automated tests that help teams validate software behaviour, detect regressions and improve release confidence. My work spans Python-based automation, API and end-to-end testing, mobile application quality and CI/CD, and I test AI-powered features for correctness, grounding and privacy.</p>
+    <p class="status"><i aria-hidden="true"></i>Open to QA Automation, SDET and AI Quality roles · India</p>
+    <div class="btns">
+      <a class="btn primary" href="#projects">View Projects</a>
+      <a class="btn" href="assets/Amarjeet_Kumar_Verma_Resume.pdf" download="Amarjeet_Kumar_Verma_Resume.pdf" type="application/pdf">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v12m0 0-4-4m4 4 4-4M5 21h14"/></svg>Download Résumé (PDF)</a>
+      <a class="btn" href="https://github.com/AmarjeetAkv">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 .5a11.5 11.5 0 0 0-3.64 22.41c.58.1.79-.25.79-.56v-2c-3.2.7-3.88-1.37-3.88-1.37-.53-1.33-1.28-1.69-1.28-1.69-1.04-.71.08-.7.08-.7 1.16.08 1.77 1.19 1.77 1.19 1.03 1.76 2.7 1.25 3.36.96.1-.75.4-1.25.73-1.54-2.55-.29-5.24-1.28-5.24-5.68 0-1.26.45-2.28 1.19-3.09-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.17 1.18a11 11 0 0 1 5.77 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.81 1.19 1.83 1.19 3.09 0 4.41-2.69 5.38-5.25 5.67.41.36.78 1.06.78 2.14v3.17c0 .31.21.67.8.56A11.5 11.5 0 0 0 12 .5Z"/></svg>GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/amarjeet-kumar-verma-363830219" rel="me"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28ZM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13ZM7.12 20.45H3.56V9h3.56v11.45ZM22.23 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.73V1.73C24 .77 23.21 0 22.23 0Z"/></svg>LinkedIn</a>
+      <a class="btn" href="#contact">Contact Me</a>
+    </div>
+  </div>
+</div>
+
+<section id="about" aria-labelledby="about-h">
+  <div class="sec-head"><h2 id="about-h">About</h2></div>
+  <div class="about">
+    <div class="prose">
+      <p>I am a QA Automation Engineer with <strong>8+ years in software testing</strong>, most recently as a Senior QA Engineer at Northern Block (March 2023 – October 2026). I build maintainable automated tests and validate software behaviour across APIs, web applications and mobile workflows.</p>
+      <p><strong>In my professional work</strong> I have used Python with Behave (BDD), Playwright, Selenium and Appium. I've covered integration, regression and end-to-end testing, run suites in GitHub Actions and Jenkins, and tested an AI assistant for out-of-scope, privacy and hallucination behaviour. <strong>In open source</strong> I contribute to load testing of ACA-Py agents with Locust. <strong>In independent work</strong> I've built an AI quality evaluation harness.</p>
+      <p>I specialise in <strong>decentralised identity and verifiable credentials</strong>. I value reproducible tests, clear failure reports and evidence that helps engineering teams make informed release decisions.</p>
+    </div>
+    <div class="card">
+      <ul class="facts">
+        <li><b>Experience</b><span>8+ years in QA, since March 2018</span></li>
+        <li><b>Last role</b><span>Senior QA Engineer, Northern Block (contract ended October 2026)</span></li>
+        <li><b>Core stack</b><span>Python, Behave, Playwright, Selenium, Appium, Locust</span></li>
+        <li><b>Domain</b><span>Decentralised identity, verifiable credentials, AI assistants</span></li>
+        <li><b>Location</b><span>India</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 class="sr-only">Technical highlights</h3>
+  <div class="grid g4" style="margin-top:20px">
+    <div class="card hl"><h3>Python automation &amp; BDD</h3><p>Behave frameworks with Playwright and Selenium covering UI and REST APIs.</p><span class="src">Professional</span></div>
+    <div class="card hl"><h3>API testing</h3><p>REST API automation for credential issuance, proof requests, DID Exchange and wallet operations.</p><span class="src">Professional</span></div>
+    <div class="card hl"><h3>Web &amp; mobile</h3><p>Role-based web journeys, and Appium automation on Android and iOS.</p><span class="src">Professional</span></div>
+    <div class="card hl"><h3>CI/CD integration</h3><p>Suites scheduled in GitHub Actions and Jenkins, with Allure reporting.</p><span class="src">Professional</span></div>
+    <div class="card hl"><h3>Performance testing</h3><p>Locust scenarios that load test ACA-Py issuer and verifier agents.</p><span class="src">Open source</span></div>
+    <div class="card hl"><h3>AI quality</h3><p>Tested an AI assistant at work, and built a reproducible evaluation harness.</p><span class="src">Professional + independent</span></div>
+    <div class="card hl"><h3>Verifiable credentials</h3><p>AnonCreds, JSON-LD and W3C credentials across issuer, holder and verifier flows.</p><span class="src">Professional</span></div>
+    <div class="card hl"><h3>Interop testing</h3><p>Worked with the OWL AATH and AMTH interoperability test harnesses.</p><span class="src">Professional</span></div>
+  </div>
+</section>
+
+<section id="projects" aria-labelledby="projects-h">
+  <div class="sec-head"><h2 id="projects-h">Featured projects</h2><p>Each card says whether it's professional work, an open-source contribution or an independent demonstration. Employer-owned code and reports aren't public, so those cards describe the work at a general level.</p></div>
+  <div class="grid g2">
+
+    <article class="card proj">
+      <div class="proj-top"><span class="tag ind">Independent Demonstration</span><span class="when">October 2026</span></div>
+      <h3>AI Quality Evaluation Harness</h3>
+      <dl>
+        <dt>Problem</dt><dd>AI assistants can invent answers, leak data or follow instructions hidden in content, and a status-code assertion catches none of that.</dd>
+        <dt>What I built</dt><dd>A versioned synthetic dataset, deterministic checks and Behave scenarios that score a fictional help assistant and compare a new build against a reference build.</dd>
+        <dt>Testing strategy</dt><dd>Correctness, grounding, unanswerable questions, prompt injection, privacy, robustness and regression. Known false positives and false negatives are recorded instead of hidden.</dd>
+        <dt>Evidence</dt><dd>All 21 Behave scenarios pass. The candidate build has seven planted defects and all seven are reported as regressions. Example reports are in the repository.</dd>
+      </dl>
+      <ul class="chips"><li>Python</li><li>Behave</li><li>JSON datasets</li><li>GitHub Actions</li></ul>
+      <div class="foot"><a class="btn" href="https://github.com/AmarjeetAkv/ai-quality-evaluation-demo">View repository</a></div>
+    </article>
+
+    <article class="card proj">
+      <div class="proj-top"><span class="tag oss">Open Source</span><span class="when">Merged 19 Nov 2024</span></div>
+      <h3>OWL Akrida: load agent migration to Credo-TS</h3>
+      <dl>
+        <dt>Problem</dt><dd>The load agent that simulates concurrent wallet holders was built on Aries Framework JavaScript, which has been superseded by Credo-TS.</dd>
+        <dt>My contribution</dt><dd>Replaced AFJ with Credo-TS in the load agent, refactored for its breaking changes and updated the Indy VDR network configuration.</dd>
+        <dt>Testing strategy</dt><dd>Load tests drive ACA-Py issuer, verifier and mediator agents over DIDComm with Locust.</dd>
+        <dt>Evidence</dt><dd>Merged into the project's main branch (PR #76, 6 files changed in the load agent).</dd>
+      </dl>
+      <ul class="chips"><li>TypeScript</li><li>Credo-TS</li><li>Locust</li><li>ACA-Py</li></ul>
+      <div class="foot"><a class="btn" href="https://github.com/openwallet-foundation/owl-akrida/pull/76">View PR #76</a></div>
+    </article>
+
+    <article class="card proj">
+      <div class="proj-top"><span class="tag pro">Professional Experience</span><span class="when">Nov 2025 – Oct 2026</span></div>
+      <h3>Testing an AI assistant on a property &amp; credential platform</h3>
+      <dl>
+        <dt>Problem</dt><dd>Cornerstone Wealth, a credential platform for the Canadian real-estate market, includes an AI assistant that answers property and portfolio questions.</dd>
+        <dt>My contribution</dt><dd>Automated role-based web journeys, and tested the assistant across valuation, equity, mortgage, property tax, cost of ownership, insurance and market queries.</dd>
+        <dt>Testing strategy</dt><dd>Positive, negative, out-of-scope, privacy and hallucination-focused suites, including checks for unavailable or unverified property facts. Chat interactions were automated with Behave and Playwright.</dd>
+        <dt>Evidence</dt><dd>Employer-owned work. Code and reports aren't public.</dd>
+      </dl>
+      <ul class="chips"><li>Python</li><li>Behave</li><li>Playwright</li><li>Allure</li></ul>
+    </article>
+
+    <article class="card proj">
+      <div class="proj-top"><span class="tag pro">Professional Experience</span><span class="when">Mar 2023 – Oct 2026</span></div>
+      <h3>Verifiable-credential API automation</h3>
+      <dl>
+        <dt>Problem</dt><dd>An enterprise API for issuing and verifying digital credentials needed end-to-end coverage across issuer, holder and verifier workflows.</dd>
+        <dt>My contribution</dt><dd>Built and maintained Behave scenarios covering the full credential lifecycle (creation, issuance, wallet storage, verification) for AnonCreds and JSON-LD, including cloud-to-mobile and cloud-to-cloud holder flows.</dd>
+        <dt>Testing strategy</dt><dd>API-level end-to-end scenarios with scheduled execution in GitHub Actions and Allure reporting.</dd>
+        <dt>Evidence</dt><dd>Employer-owned work. Code and reports aren't public.</dd>
+      </dl>
+      <ul class="chips"><li>Python</li><li>Behave</li><li>REST APIs</li><li>GitHub Actions</li><li>Allure</li></ul>
+    </article>
+  </div>
+</section>
+
+<section id="skills" aria-labelledby="skills-h">
+  <div class="sec-head"><h2 id="skills-h">Technical skills</h2><p>Grouped by area. Each one is backed by my résumé, public code or the projects above.</p></div>
+  <div class="grid g3">
+    <div class="card skill"><h3>Programming</h3><ul class="chips"><li>Python</li><li>Java (working knowledge)</li><li>TypeScript / Node.js (open source)</li></ul></div>
+    <div class="card skill"><h3>Test automation</h3><ul class="chips"><li>Behave (BDD)</li><li>Playwright</li><li>Selenium WebDriver</li><li>Appium</li></ul></div>
+    <div class="card skill"><h3>API &amp; integration testing</h3><ul class="chips"><li>REST APIs</li><li>JSON</li><li>End-to-end API workflows</li><li>Negative testing</li><li>Integration &amp; regression</li></ul></div>
+    <div class="card skill"><h3>Performance testing</h3><ul class="chips"><li>Locust</li><li>Load scenario design</li><li>Concurrent DIDComm agents</li></ul></div>
+    <div class="card skill"><h3>CI/CD &amp; workflow</h3><ul class="chips"><li>Git &amp; GitHub</li><li>GitHub Actions</li><li>Jenkins</li><li>AWS EC2</li><li>Allure</li><li>Jira</li><li>Zephyr</li><li>Agile / Scrum</li></ul></div>
+    <div class="card skill"><h3>Specialised domain</h3><ul class="chips"><li>AnonCreds</li><li>JSON-LD</li><li>W3C Verifiable Credentials</li><li>DID Exchange</li><li>Issuer / holder / verifier flows</li><li>Trust Registry</li><li>Mobile wallets</li></ul></div>
+    <div class="card skill" style="grid-column:1/-1">
+      <h3>AI quality engineering</h3>
+      <div class="sub">Professional</div>
+      <ul class="chips"><li>Chatbot response validation</li><li>Hallucination testing</li><li>Out-of-scope testing</li><li>Negative testing</li><li>Privacy testing</li></ul>
+      <div class="sub">Independent project</div>
+      <ul class="chips"><li>Versioned evaluation datasets</li><li>Grounding checks</li><li>Prompt-injection scenarios</li><li>Regression comparison between builds</li><li>False-positive / false-negative analysis</li></ul>
+    </div>
+  </div>
+</section>
+
+<section id="experience" aria-labelledby="exp-h">
+  <div class="sec-head"><h2 id="exp-h">Professional experience</h2></div>
+
+  <article class="card job">
+    <div class="job-head"><div><h3>Senior QA Engineer</h3><div class="org">Northern Block Inc.</div></div><div class="when">March 2023 – October 2026</div></div>
+    <ul class="list">
+      <li>Owned test design, automation and execution for API, web and mobile applications across several projects running in parallel.</li>
+      <li>Built and maintained Python automation frameworks using Behave with Playwright and Selenium for UI and REST API coverage.</li>
+      <li>Validated end-to-end user journeys, API behaviour, data handling and negative scenarios, then triaged failures and drove defects to resolution.</li>
+      <li>Integrated automated suites into GitHub Actions and Jenkins pipelines and published Allure reports for team-wide visibility.</li>
+      <li>Worked with engineering and product teams in Agile sprints to expand test coverage and raise release confidence.</li>
+    </ul>
+    <div class="work">
+      <h4>Selected work</h4>
+      <ul>
+        <li>Verifiable-credential API automation (see Featured projects)</li>
+        <li>AI assistant testing on the Cornerstone Wealth platform (see Featured projects)</li>
+        <li>Wallet API automation: credential issuance, proof requests, DID Exchange and wallet operations, run through Jenkins on AWS EC2 with Zephyr test management</li>
+        <li>Enterprise web UI automation with Selenium, and mobile wallet automation with Appium on Android and iOS</li>
+        <li>Trust Registry UI automation with Behave and Selenium</li>
+      </ul>
+    </div>
+  </article>
+
+  <article class="card job">
+    <div class="job-head"><div><h3>Senior QA Engineer</h3><div class="org">QSS Technosoft Pvt. Ltd.</div></div><div class="when">October 2021 – March 2023</div></div>
+    <ul class="list">
+      <li>Automated web and mobile scenarios with Python, Selenium and Appium for an e-commerce and project-management platform, and handled functional and GUI testing, test planning and Jira defect reporting.</li>
+    </ul>
+  </article>
+
+  <article class="card job">
+    <div class="job-head"><div><h3>QA Engineer</h3><div class="org">Perigon Technologies Pvt. Ltd.</div></div><div class="when">March 2018 – September 2021</div></div>
+    <ul class="list">
+      <li>Wrote and ran Java/Selenium automation for an enterprise CRM, maintained test data and performed functional and GUI testing.</li>
+      <li>Performed smoke, functional, integration, system and regression testing for a sales-management application, logging defects in Jira.</li>
+    </ul>
+  </article>
+</section>
+
+<section id="ai-quality" aria-labelledby="aiq-h">
+  <div class="sec-head"><h2 id="aiq-h">AI Quality Engineering: Testing Beyond the Happy Path</h2><p>AI-powered applications bring testing challenges that go beyond ordinary functional assertions. My approach is to define expected behaviour per scenario, then check it for correctness, grounding in evidence, robustness, safety, privacy and regression.</p></div>
+  <div class="aiq">
+    <div class="card">
+      <span class="tag pro">Professional Experience</span>
+      <h3 style="font-size:18px;margin:12px 0 8px">AI assistant testing, Nov 2025 – Oct 2026</h3>
+      <p class="muted small">At Northern Block I tested an AI assistant on a property and credential platform. I designed positive, negative, out-of-scope, privacy and hallucination-focused suites, including checks for unavailable or unverified property facts, and automated chat interactions with Behave and Playwright.</p>
+      <div class="callout">These checks show how a system behaved on defined scenarios. They don't prove an AI system is safe, unbiased or free of hallucinations, and I don't present them that way.</div>
+    </div>
+    <div class="card">
+      <span class="tag ind">Independent Demonstration</span>
+      <h3 style="font-size:18px;margin:12px 0 14px">What the evaluation harness checks</h3>
+      <ol class="cats">
+        <li><span class="n">01</span><div><b>Response correctness</b><span>Required facts are present and contradicted claims are absent (COR-001, COR-002).</span></div></li>
+        <li><span class="n">02</span><div><b>Grounding</b><span>Every sentence and number must trace back to the supplied source (GRD-001, GRD-002).</span></div></li>
+        <li><span class="n">03</span><div><b>Unanswerable questions</b><span>The assistant must say it doesn't know instead of inventing a price or a date (UNA-001, UNA-002).</span></div></li>
+        <li><span class="n">04</span><div><b>Prompt injection</b><span>An instruction hidden in an untrusted article must not be followed, as shown by a canary token (INJ-001).</span></div></li>
+        <li><span class="n">05</span><div><b>Privacy</b><span>Synthetic secrets, emails and phone numbers from a restricted record must never appear (PRV-001, PRV-002).</span></div></li>
+        <li><span class="n">06</span><div><b>Regression</b><span>A candidate build is diffed against the reference build, and every pass → fail change is reported.</span></div></li>
+        <li><span class="n">07</span><div><b>Limits of automated judging</b><span>A known false positive and a known false negative are kept in the dataset and reported separately.</span></div></li>
+      </ol>
+      <div class="btns" style="margin-top:16px">
+        <a class="btn" href="https://github.com/AmarjeetAkv/ai-quality-evaluation-demo/blob/main/data/cases.json">Read the test cases</a>
+        <a class="btn" href="https://github.com/AmarjeetAkv/ai-quality-evaluation-demo/blob/main/reports/candidate.md">See a regression report</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="open-source" aria-labelledby="oss-h">
+  <div class="sec-head"><h2 id="oss-h">Open-source contributions</h2><p><a href="https://github.com/openwallet-foundation/owl-akrida">OWL Akrida</a> (OpenWallet Foundation, formerly Hyperledger Aries Akrida) simulates concurrent holder agents to load test ACA-Py issuer, verifier and mediator agents over DIDComm.</p></div>
+  <div class="grid g2">
+    <article class="card proj">
+      <div class="proj-top"><h3>PR #76: AFJ → Credo-TS migration</h3><span class="pr-status merged">Merged · 19 Nov 2024</span></div>
+      <p class="small">Migrated the load agent from Aries Framework JavaScript to Credo-TS, refactored for breaking changes and updated the Indy VDR network configuration. This keeps the load-testing tool on a maintained agent framework.</p>
+      <div class="foot"><a class="btn" href="https://github.com/openwallet-foundation/owl-akrida/pull/76">View PR #76 on GitHub</a></div>
+    </article>
+    <article class="card proj">
+      <div class="proj-top"><h3>PR #84: ACA-Py 1.0 &amp; AIP 2.0 support</h3><span class="pr-status open">Not merged · further updates requested</span></div>
+      <p class="small">Upgraded ACA-Py to 1.0.0 and added the DID Exchange 1.1 connection protocol. Added Locust scenarios for Issue Credential and Present Proof under AIP 2.0, plus revocation and connection-deletion flows, and documented the askar-anoncreds wallet type.</p>
+      <div class="foot"><a class="btn" href="https://github.com/openwallet-foundation/owl-akrida/pull/84">View PR #84 on GitHub</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="education" aria-labelledby="edu-h">
+  <div class="sec-head"><h2 id="edu-h">Education</h2></div>
+  <div class="card">
+    <h3 style="font-size:18px">B.Tech, Electrical Engineering</h3>
+    <p class="muted">Biju Patnaik University of Technology (BPUT), 2014</p>
+    <p class="muted small" style="margin-top:10px">Languages: English, Hindi, Magahi, Bhojpuri, Odia</p>
+  </div>
+</section>
+
+<section id="contact" aria-labelledby="contact-h">
+  <div class="sec-head"><h2 id="contact-h">Contact</h2><p>I'm open to Senior QA Automation, SDET, API Test Automation and AI Quality Engineering roles. Email or LinkedIn is the quickest way to reach me.</p></div>
+  <div class="card">
+    <ul class="contact-list">
+      <li><b>Email</b><div class="copy-row"><a href="mailto:vermaamarjeetkumar0@gmail.com">vermaamarjeetkumar0@gmail.com</a><button class="btn" id="copy-email" type="button">Copy email</button><span class="copy-msg" id="copy-msg" aria-live="polite"></span></div></li>
+      <li><b>GitHub</b><a href="https://github.com/AmarjeetAkv" rel="me">github.com/AmarjeetAkv</a></li>
+      <li><b>LinkedIn</b><a href="https://www.linkedin.com/in/amarjeet-kumar-verma-363830219" rel="me">linkedin.com/in/amarjeet-kumar-verma-363830219</a></li>
+      <li><b>Résumé</b><a href="assets/Amarjeet_Kumar_Verma_Resume.pdf" download="Amarjeet_Kumar_Verma_Resume.pdf" type="application/pdf">Download Amarjeet_Kumar_Verma_Resume.pdf</a></li>
+    </ul>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Amarjeet Kumar Verma</span>
+    <span>Static site on GitHub Pages · <a href="https://github.com/AmarjeetAkv/amarjeetakv.github.io">Source</a></span>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+
+  // Theme: follows the system until the visitor picks one.
+  var themeBtn = document.getElementById('theme-btn');
+  function current() {
+    var t = root.getAttribute('data-theme');
+    if (t) return t;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function label() { themeBtn.setAttribute('aria-label', current() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); }
+  themeBtn.addEventListener('click', function () {
+    var next = current() === 'dark' ? 'light' : 'dark';
+    root.setAttribute('data-theme', next);
+    try { localStorage.setItem('theme', next); } catch (e) {}
+    label();
+  });
+  label();
+
+  // Mobile menu
+  var menuBtn = document.getElementById('menu-btn');
+  var links = document.getElementById('nav-links');
+  function setMenu(open) {
+    links.classList.toggle('open', open);
+    menuBtn.setAttribute('aria-expanded', String(open));
+    menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  }
+  menuBtn.addEventListener('click', function () { setMenu(!links.classList.contains('open')); });
+  links.addEventListener('click', function (e) { if (e.target.closest('a')) setMenu(false); });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && links.classList.contains('open')) { setMenu(false); menuBtn.focus(); }
+  });
+
+  // Highlight the nav item for the section in view.
+  var navAnchors = Array.prototype.slice.call(links.querySelectorAll('a'));
+  var targets = navAnchors.map(function (a) { return document.querySelector(a.getAttribute('href')); });
+  function onScroll() {
+    var y = window.scrollY + 100, idx = 0;
+    targets.forEach(function (t, i) { if (t && t.getBoundingClientRect().top + window.scrollY <= y) idx = i; });
+    navAnchors.forEach(function (a, i) { if (i === idx) a.setAttribute('aria-current', 'true'); else a.removeAttribute('aria-current'); });
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // Copy email
+  document.getElementById('copy-email').addEventListener('click', function () {
+    var msg = document.getElementById('copy-msg');
+    if (!navigator.clipboard) { msg.textContent = 'Select the address to copy it.'; return; }
+    navigator.clipboard.writeText('vermaamarjeetkumar0@gmail.com')
+      .then(function () { msg.textContent = 'Copied'; })
+      .catch(function () { msg.textContent = 'Select the address to copy it.'; });
+  });
+})();
+</script>
+</body>
+</html>
