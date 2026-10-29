@@ -19,7 +19,7 @@
 <meta name="twitter:title" content="Amarjeet Kumar Verma | QA Automation Engineer &amp; AI Quality">
 <meta name="twitter:description" content="8+ years in QA. Python test automation, API and end-to-end testing, open-source load testing, AI quality evaluation.">
 <meta name="twitter:image" content="https://amarjeetakv.github.io/assets/og-image.png">
-<meta name="theme-color" content="#0b1220">
+<meta name="theme-color" content="#000000">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <script>
@@ -29,32 +29,35 @@
 <style>
 /* Layout: one 1100px column. Sticky nav, compact hero, then sections of
    consistent cards. One accent (teal); semantic colours only for project-type tags. */
+/* Layout: one 1100px column. Sticky nav, compact hero, then sections of cards.
+   Theme: black-to-gold page gradient (dark, default) or cream-to-yellow (light);
+   one warm gradient (yellow -> orange -> pink) for highlights. */
 :root{
-  --bg:#f6f7f9; --surface:#ffffff; --ink:#0f172a; --muted:#475569; --line:#dde3ea; --chip:#eef2f6;
-  --accent:#0f766e; --accent-ink:#ffffff; --accent-soft:#e6f4f2;
-  --t-pro:#1d4ed8; --t-oss:#166534; --t-ind:#92400e;
+  --bg:#070605; --surface:rgba(22,19,12,.82); --ink:#f6f1e3; --muted:#c9bfa6; --line:rgba(250,204,21,.18); --chip:#2a2410;
+  --accent:#facc15; --accent-ink:#141005; --btn-bg:#fbbf24;
+  --g1:#fde047; --g2:#fb923c; --g3:#f472b6;
+  --grad:linear-gradient(120deg,var(--g1),var(--g2) 55%,var(--g3));
+  --page:linear-gradient(165deg,#000000 0%,#0b0904 38%,#2a1f03 72%,#4d3a02 100%);
+  --glow:radial-gradient(900px 520px at 92% -6%,rgba(250,204,21,.22),transparent 70%),radial-gradient(700px 500px at -5% 60%,rgba(251,146,60,.10),transparent 70%);
+  --t-pro:#93c5fd; --t-oss:#86efac; --t-ind:#fcd34d;
   --sans:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   --mono:ui-monospace,"SFMono-Regular","Cascadia Mono",Menlo,Consolas,monospace;
   --radius:12px;
-  color-scheme:light;
-}
-@media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0b1220; --surface:#111a2b; --ink:#e6edf7; --muted:#9fb0c6; --line:#22304a; --chip:#18243a;
-    --accent:#2dd4bf; --accent-ink:#04201d; --accent-soft:#0f2a2c;
-    --t-pro:#93b4ff; --t-oss:#6ee7a0; --t-ind:#fbbf6a;
-    color-scheme:dark;
-  }
-}
-:root[data-theme="dark"]{
-  --bg:#0b1220; --surface:#111a2b; --ink:#e6edf7; --muted:#9fb0c6; --line:#22304a; --chip:#18243a;
-  --accent:#2dd4bf; --accent-ink:#04201d; --accent-soft:#0f2a2c;
-  --t-pro:#93b4ff; --t-oss:#6ee7a0; --t-ind:#fbbf6a;
   color-scheme:dark;
+}
+:root[data-theme="light"]{
+  --bg:#fffaf0; --surface:rgba(255,255,255,.86); --ink:#1c1606; --muted:#574a28; --line:#ecdca8; --chip:#fdf1c7;
+  --accent:#8a5a00; --accent-ink:#1c1606; --btn-bg:#fbbf24;
+  --g1:#b45309; --g2:#c2410c; --g3:#be185d;
+  --page:linear-gradient(165deg,#fffdf7 0%,#fff6d6 45%,#ffe58a 80%,#ffd23f 100%);
+  --glow:radial-gradient(900px 520px at 92% -6%,rgba(251,146,60,.18),transparent 70%);
+  --t-pro:#1d4ed8; --t-oss:#166534; --t-ind:#92400e;
+  color-scheme:light;
 }
 *{box-sizing:border-box}
 html{scroll-padding-top:76px;-webkit-text-size-adjust:100%}
 @media (prefers-reduced-motion: no-preference){html{scroll-behavior:smooth}}
+body::before{content:"";position:fixed;inset:0;z-index:-1;background:var(--glow),var(--page)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6}
 a{color:var(--accent);text-underline-offset:3px}
 :focus-visible{outline:3px solid var(--accent);outline-offset:2px;border-radius:4px}
@@ -66,14 +69,14 @@ p{margin:0}
 .skip:focus{left:8px}
 
 /* nav */
-.site-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.site-nav{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--bg) 80%,transparent);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .nav-in{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
 .brand{font-weight:700;color:var(--ink);text-decoration:none;display:flex;align-items:center;gap:10px;white-space:nowrap}
-.brand img{width:28px;height:28px}
+.brand img{width:28px;height:28px;border-radius:7px}
 .nav-links{display:flex;gap:4px;list-style:none;margin:0;padding:0}
 .nav-links a{display:block;padding:8px 12px;border-radius:8px;color:var(--muted);text-decoration:none;font-size:15px;font-weight:500}
 .nav-links a:hover{color:var(--ink);background:var(--chip)}
-.nav-links a[aria-current="true"]{color:var(--ink);background:var(--chip)}
+.nav-links a[aria-current="true"]{color:var(--ink);background:var(--chip);box-shadow:inset 0 -2px 0 var(--g2)}
 .nav-tools{display:flex;gap:4px}
 .icon-btn{width:44px;height:44px;display:grid;place-items:center;border:1px solid transparent;border-radius:10px;background:none;color:var(--ink);cursor:pointer}
 .icon-btn:hover{background:var(--chip)}
@@ -85,12 +88,14 @@ p{margin:0}
 .btn{display:inline-flex;align-items:center;gap:8px;min-height:44px;padding:10px 18px;border-radius:10px;font:600 15.5px var(--sans);text-decoration:none;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer;transition:border-color .15s,background .15s}
 .btn:hover{border-color:var(--accent)}
 .btn svg{width:18px;height:18px;flex:none}
-.btn.primary{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
-.btn.primary:hover{filter:brightness(1.08)}
+.btn.primary{background-color:var(--btn-bg);background-image:linear-gradient(120deg,#fde047,#fb923c);border-color:transparent;color:#141005;box-shadow:0 10px 24px -12px #fb923c}
+.btn.primary:hover{filter:brightness(1.08);border-color:transparent}
 
 /* hero */
 .hero{display:grid;grid-template-columns:auto 1fr;gap:36px;align-items:center;padding:56px 0 48px}
-.avatar{width:168px;height:168px;border-radius:50%;object-fit:cover;border:4px solid var(--surface);box-shadow:0 0 0 1px var(--line)}
+.avatar-ring{padding:5px;border-radius:50%;background:var(--grad);box-shadow:0 18px 40px -18px var(--g2);width:max-content}
+.avatar{width:168px;height:168px;border-radius:50%;object-fit:cover;border:4px solid #0b0904;display:block}
+.grad-text{background:var(--grad);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero h1{font-size:clamp(34px,5vw,50px);letter-spacing:-.02em}
 .headline{font-family:var(--mono);font-size:clamp(14px,1.8vw,16.5px);color:var(--accent);margin:10px 0 16px;font-weight:500}
 .lede{color:var(--muted);max-width:64ch;font-size:18px}
@@ -101,8 +106,14 @@ p{margin:0}
 section{padding:56px 0;border-top:1px solid var(--line)}
 .sec-head{margin-bottom:28px;max-width:72ch}
 .sec-head h2{font-size:clamp(26px,3.4vw,32px);letter-spacing:-.01em}
+.sec-head h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:var(--grad);margin-top:12px}
 .sec-head p{color:var(--muted);margin-top:8px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px;position:relative;overflow:hidden}
+.proj::before,.hl::before,.skill::before{content:"";position:absolute;left:0;right:0;top:0;height:3px;background:var(--grad)}
+.hl{transition:transform .2s,box-shadow .2s}
+.hl:hover,.proj:hover{transform:translateY(-2px);box-shadow:0 14px 30px -18px var(--g1)}
+@media (prefers-reduced-motion: reduce){.hl:hover,.proj:hover{transform:none}}
+.proj{transition:transform .2s,box-shadow .2s}
 .grid{display:grid;gap:16px}
 .g2{grid-template-columns:repeat(2,minmax(0,1fr))}
 .g3{grid-template-columns:repeat(3,minmax(0,1fr))}
@@ -235,9 +246,9 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 <main id="main" class="wrap">
 
 <div class="hero" id="home">
-  <img class="avatar" src="assets/profile.jpg" alt="Photo of Amarjeet Kumar Verma" width="168" height="168">
+  <div class="avatar-ring"><img class="avatar" src="assets/profile.jpg" alt="Photo of Amarjeet Kumar Verma" width="168" height="168"></div>
   <div>
-    <h1>Amarjeet Kumar Verma</h1>
+    <h1><span class="grad-text">Amarjeet Kumar Verma</span></h1>
     <p class="headline">QA Automation Engineer | Python | API Testing | AI Quality</p>
     <p class="lede">I build automated tests that help teams validate software behaviour, detect regressions and improve release confidence. My work spans Python-based automation, API and end-to-end testing, mobile application quality and CI/CD, and I test AI-powered features for correctness, grounding and privacy.</p>
     <p class="status"><i aria-hidden="true"></i>Open to QA Automation, SDET and AI Quality roles · India</p>
@@ -479,12 +490,11 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:10px}
 (function () {
   var root = document.documentElement;
 
-  // Theme: follows the system until the visitor picks one.
+  // Theme: dark (black to gold) by default; the visitor can switch to light.
   var themeBtn = document.getElementById('theme-btn');
   function current() {
     var t = root.getAttribute('data-theme');
-    if (t) return t;
-    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return t === 'light' ? 'light' : 'dark';
   }
   function label() { themeBtn.setAttribute('aria-label', current() === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'); }
   themeBtn.addEventListener('click', function () {
